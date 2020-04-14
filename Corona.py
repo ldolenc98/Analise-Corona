@@ -22,7 +22,7 @@ if sys.argv[1:] == []:
     padrao_recuperados = re.findall(r'<span>(\d+,\d+)</span>', texto)
     recuperados = padrao_recuperados[1]
 
-    print(casos + " ; " + mortes + " ; " + recuperados)
+    print(casos + " ; " + mortes + " ; " + recuperados + " ; " + data1)
 
 else:
     
@@ -30,22 +30,13 @@ else:
     
     texto = r.text
     
-    padrao_casos = re.findall(r'aaa\">(\d+,\d+)\s<', texto)
+    padrao_casos = re.findall(r'aaa\">(.*?.*?.*?.*?\d+)\s<', texto)
     casos = padrao_casos[0]
 
-    padrao_mortes = re.findall(r'<span>(\d+,\d+)</span>', texto)
+    padrao_mortes = re.findall(r'<span>(.*?.*?.*?.*?\d+)</span>', texto)
     mortes = padrao_mortes[0]
 
-    padrao_recuperados = re.findall(r'<span>(\d+,\d+)</span>', texto)
+    padrao_recuperados = re.findall(r'<span>(.*?.*?.*?.*?\d+)</span>', texto)
     recuperados = padrao_recuperados[1]
 
-    print(casos + ";" + mortes + ";" + recuperados)
-
-    
-    
-    
-
-
-   
-
-
+    print(casos + " ; " + mortes + " ; " + recuperados + " ; " + data1)
